@@ -1,39 +1,39 @@
-import rank3Webp from "@/assets/ranks/3.webp";
-import rank4Webp from "@/assets/ranks/4.webp";
-import rank5Webp from "@/assets/ranks/5.webp";
-import rank6Webp from "@/assets/ranks/6.webp";
-import rank7Webp from "@/assets/ranks/7.webp";
-import rank8Webp from "@/assets/ranks/8.webp";
-import rank9Webp from "@/assets/ranks/9.webp";
-import rank10Webp from "@/assets/ranks/10.webp";
-import rank11Webp from "@/assets/ranks/11.webp";
-import rank12Webp from "@/assets/ranks/12.webp";
-import rank13Webp from "@/assets/ranks/13.webp";
-import rank14Webp from "@/assets/ranks/14.webp";
-import rank15Webp from "@/assets/ranks/15.webp";
-import rank16Webp from "@/assets/ranks/16.webp";
-import rank17Webp from "@/assets/ranks/17.webp";
-import rank18Webp from "@/assets/ranks/18.webp";
+import iron3 from "@/assets/ranks/3.webp";
+import bronze1 from "@/assets/ranks/4.webp";
+import bronze2 from "@/assets/ranks/5.webp";
+import bronze3 from "@/assets/ranks/6.webp";
+import silver1 from "@/assets/ranks/7.webp";
+import silver2 from "@/assets/ranks/8.webp";
+import silver3 from "@/assets/ranks/9.webp";
+import gold1 from "@/assets/ranks/10.webp";
+import gold2 from "@/assets/ranks/11.webp";
+import gold3 from "@/assets/ranks/12.webp";
+import platinum1 from "@/assets/ranks/13.webp";
+import platinum2 from "@/assets/ranks/14.webp";
+import platinum3 from "@/assets/ranks/15.webp";
+import diamond1 from "@/assets/ranks/16.webp";
+import diamond2 from "@/assets/ranks/17.webp";
+import diamond3 from "@/assets/ranks/18.webp";
 
-export const RANK_ICONS: Record<number, string> = {
-  3: rank3Webp,
-  4: rank4Webp,
-  5: rank5Webp,
-  6: rank3Webp,
-  7: rank4Webp,
-  8: rank5Webp,
-  9: rank6Webp,
-  10: rank7Webp,
-  11: rank8Webp,
-  12: rank9Webp,
-  13: rank10Webp,
-  14: rank11Webp,
-  15: rank12Webp,
-  16: rank13Webp,
-  17: rank14Webp,
-  18: rank15Webp,
+export const RANK_ICONS: Record<string, string> = {
+  "Iron 3": iron3,
+  "Bronze 1": bronze1,
+  "Bronze 2": bronze2,
+  "Bronze 3": bronze3,
+  "Silver 1": silver1,
+  "Silver 2": silver2,
+  "Silver 3": silver3,
+  "Gold 1": gold1,
+  "Gold 2": gold2,
+  "Gold 3": gold3,
+  "Platinum 1": platinum1,
+  "Platinum 2": platinum2,
+  "Platinum 3": platinum3,
+  "Diamond 1": diamond1,
+  "Diamond 2": diamond2,
+  "Diamond 3": diamond3,
 };
 
-export function getRankIcon(tierId: number): string {
-  return RANK_ICONS[tierId] ?? rank18Webp;
+export function getRankIcon(tierName: string): string {
+  return RANK_ICONS[tierName] ?? iron3;
 }

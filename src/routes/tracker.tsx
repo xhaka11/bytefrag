@@ -80,8 +80,8 @@ interface MatchResponse {
   }>;
 }
 
-function RankBadge({ tierId }: { tierId: number }) {
-  const icon = getRankIcon(tierId);
+function RankBadge({ tierName }: { tierName: string }) {
+  const icon = getRankIcon(tierName);
   return (
     <img src={icon} alt="rank" width={28} height={28} className="shrink-0" />
   );
@@ -264,7 +264,7 @@ function TrackerPage() {
   const totalGames = playerMatches.length;
   const wins = playerMatches.filter((m) => m.won).length;
   const losses = totalGames - wins;
-  const winRate = playerConfig.stats.winRate;
+  const winRate = totalGames > 0 ? ((wins / totalGames) * 100).toFixed(1) : "0";
 
   const totalKills = playerMatches.reduce((s, m) => s + m.player.stats.kills, 0);
   const totalDeaths = playerMatches.reduce((s, m) => s + m.player.stats.deaths, 0);
@@ -390,7 +390,7 @@ function TrackerPage() {
               {mmr.data.current && (
                 <Reveal delay={0.08}>
                   <div className="mt-3 flex items-center gap-3">
-                    <RankBadge tierId={mmr.data.current.tier.id} />
+                    <RankBadge tierName={mmr.data.current.tier.name} />
                     <div>
                       <span className="label-hud text-primary">Current Rank</span>
                       <div className="text-sm font-bold">{mmr.data.current.tier.name}</div>
@@ -402,7 +402,7 @@ function TrackerPage() {
               {mmr.data.peak && (
                 <Reveal delay={0.08}>
                   <div className="mt-3 flex items-center gap-3">
-                    <RankBadge tierId={mmr.data.peak.tier.id} />
+                    <RankBadge tierName={mmr.data.peak.tier.name} />
                     <div>
                       <span className="label-hud text-muted-foreground">Peak Rank</span>
                       <div className="text-sm font-bold">{mmr.data.peak.tier.name}</div>
