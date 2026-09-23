@@ -14,6 +14,7 @@ import platinum3 from "@/assets/ranks/15.webp";
 import diamond1 from "@/assets/ranks/16.webp";
 import diamond2 from "@/assets/ranks/17.webp";
 import diamond3 from "@/assets/ranks/18.webp";
+import unranked from "@/assets/ranks/unranked.svg";
 
 export const RANK_ICONS: Record<string, string> = {
   "Iron 3": iron3,
@@ -32,8 +33,9 @@ export const RANK_ICONS: Record<string, string> = {
   "Diamond 1": diamond1,
   "Diamond 2": diamond2,
   "Diamond 3": diamond3,
+  "Unranked": unranked,
 };
 
 export function getRankIcon(tierName: string): string {
-  return RANK_ICONS[tierName] ?? iron3;
+  return RANK_ICONS[tierName] ?? RANK_ICONS["Unranked"];
 }
